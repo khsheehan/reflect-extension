@@ -1,0 +1,46 @@
+{
+  "name": "ReflectorsHub",
+  "version": "0.1",
+  "manifest_version": 3,
+  "description": "Sheeeeeeeesh.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Click to open panel"
+  },
+  "icons": {
+    "128": "images/icon-128.png",
+    "16": "images/icon-16.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self'"
+},
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+        "match_about_blank": true,
+        "js": [
+            "page.js"
+        ]
+    }
+],
+"side_panel": {
+  "default_path": "sidepanel.html"
+},
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*",
+    "<all_urls>"
+  ],
+  "permissions": [
+    "scripting",
+    "storage",
+    "tabs",
+    "activeTab",
+    "sidePanel",
+    "contextMenus",
+    "tabCapture"
+  ]
+}

@@ -1,0 +1,83 @@
+
+:root, :host { font-size: 16px; }
+:where(:not(iframe, canvas, img, video, svg, symbol, svg *, symbol *)) { all: unset; display: revert; }
+*, *::before, *::after { box-sizing: border-box; }
+ol, ul { list-style: none; }
+img { max-width: 100%; }
+table { border-collapse: collapse; }
+textarea { white-space: revert; }
+
+
+
+section {
+  border: solid 1px black;
+  padding: 12px;
+}
+
+.script-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.script-list .script-instance {
+  border-radius: 6px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  padding: 8px 8px;
+  background: white;
+}
+
+.result-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.result-list .result-instance {
+  border-radius: 6px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  padding: 8px 8px;
+  background: white;
+}
+
+h1 {
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+button {
+  border-radius: 6px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  padding: 8px 8px;
+  background: white;
+}
+
+input[type='text'] {
+  border-radius: 6px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  padding: 8px 8px;
+  background: white;
+}
+
+textarea {
+  border-radius: 6px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  padding: 8px 8px;
+}
+
+button {
+  border-radius: 6px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  padding: 8px 8px;
+}
+
+/* Temporary */
+.new-note, .notes {
+  display: none;
+}

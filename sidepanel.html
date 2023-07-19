@@ -1,0 +1,129 @@
+<html>
+  <head>
+    <title>ReflectorsHub</title>
+    <link rel="stylesheet" href="sidepanel.css">
+  </head>
+  <body>
+
+    <!-- templates -->
+    <template id='script-instance'>
+      <div class='script-instance'>
+        <div>id: <span id='script-id'></span></div>
+        <div>type: <span id='script-type'></span></div>
+        <div>content: <span id='script-content'></span></div>
+        <button class='run-script'>Run Script</button>
+        <button class='delete-script'>Delete Script</button>
+      </div>
+    </template>
+
+    <template id='result-instance'>
+      <div class='result-instance'>
+        <div>start: <span id='start-time'></span></div>
+        <div>end: <span id='end-time'></span></div>
+        <div>script id: <span id='script-id'></span></div>
+        <div>tab: <span class='tab-id' id='tab-id'></span></div>
+        <div>href: <span class='tab-href' id='tab-href'></span></div>
+        <div>return value: <span id='result-content'></span></div>
+        <div>logs: <span id='result-logs'></span></div>
+        <div>before screenshot: <img class='tab-before-screenshot' id='tab-before-screenshot'></img></div>
+        <div>after screenshot: <img class='tab-screenshot' id='tab-screenshot'></img></div>
+      </div>
+    </template>
+
+    <template id='note-instance'>
+      <div class='note-instance'>
+        <div>content: <span id='note-content'></span></div>
+        <button class='delete-note'>Delete note</button>
+      </div>
+    </template>
+
+    <template id='playbook-instance'>
+      <div class='playbook-instance'>
+        <div>id: <span id='playbook-id'></span></div>
+        <div>content: <span id='playbook-content'></span></div>
+        <button class='run-playbook'>Run playbook</button>
+        <button class='delete-playbook'>Delete playbook</button>
+      </div>
+    </template>
+
+    <template id='playbook-content-instance'>
+      <div class='playbook-content-instance' style='border: solid 1px lightgrey;'>
+        <div>type: <span id='playbook-content-type'></span></div>
+        <div>value: <span id='playbook-content-value'></span></div>
+      </div>
+    </template>
+
+    <template id='new-playbook-item-instance'>
+      <div class='new-playbook-item-instance' style='background: lightgrey;'>
+        <select style='background: white; padding: 4px; border: solid 1px black; border-radius: 4px;'>
+          <option>script</option>
+          <option>instruction</option>
+        </select>
+
+        <input type='text' />
+      </div>
+    </template>
+
+
+
+    <!-- ui -->
+
+    <button id='start-draw'>start draw</button>
+    <button id='stop-draw'>stop draw</button>
+
+    <section class='new-playbook'>
+      <h1>New Playbook</h1>
+      <div>[list of scripts (actions) and instructions]</div>
+      <br>
+
+      <div id='new-playbook-item-holder'></div>
+
+      
+      <button id='add-new-playbook-item'>&plus; New Step</button>
+      <button id='save-new-playbook'>&plus; Save</button>
+    </section>
+
+    <section class='new-script'>
+      <h1>New Script</h1>
+      <input type='text' id='new-script-id' placeholder='script id'></input>
+      <br>
+      <textarea id='new-script-content' placeholder="script body"></textarea>
+      <br>
+      <button id='add-new-script'>&plus; Add</button>
+    </section>
+
+    <section class='new-note'>
+      <h1>New Note</h1>
+      <textarea id='new-note-content' placeholder="note body"></textarea>
+      <br>
+      <button id='add-new-note'>&plus; Add</button>
+    </section>
+
+    <section class='scripts'>
+      <h1>Scripts</h1>
+      <div class='script-list' id='all-scripts'>...scripts go here</div>
+    </section>
+
+    <section class='notes'>
+      <h1>Notes</h1>
+      <div class='note-list' id='all-notes'>...notes go here</div>
+    </section>
+
+    <section class='playbooks'>
+      <h1>playbooks</h1>
+      <div class='playbook-list' id='all-playbooks'>...playbooks go here</div>
+    </section>
+
+    <section class='all-results'>
+      <h1>Results</h1>
+      <div class='result-list' id='all-results'></div>
+      <button id='clear-results'>clear results</button>
+    </section>
+
+    <section>
+      <button id='delete-all' style='background: red; color: white;'>delete all</button>
+    </section>
+
+    <script src="sidepanel.js"></script>
+  </body>
+</html>
